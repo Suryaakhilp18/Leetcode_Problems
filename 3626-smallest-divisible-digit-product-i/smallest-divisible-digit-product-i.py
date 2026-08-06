@@ -15,7 +15,7 @@ class Solution:
 
                 temp //= 10
 
-            if product % t == 0:
+                if product % t == 0:
                     return n
 
             n += 1
