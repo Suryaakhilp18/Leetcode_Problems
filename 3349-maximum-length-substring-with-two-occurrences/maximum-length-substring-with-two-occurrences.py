@@ -1,0 +1,20 @@
+from collections import Counter
+class Solution:
+    def maximumLengthSubstring(self, s: str) -> int:
+
+        cnt = Counter()
+
+        left = 0
+        max_len = 0
+
+        for right , char in enumerate(s):
+            cnt[char] += 1
+
+            while cnt[char] > 2:
+                cnt[s[left]] -= 1
+                left += 1
+
+
+            max_len = max(max_len,right-left+1)
+
+        return max_len
